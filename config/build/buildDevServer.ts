@@ -9,5 +9,6 @@ export default function buildDevServer(
     open: true,
     port,
     historyApiFallback: true,
+    hot: true,
   };
 }

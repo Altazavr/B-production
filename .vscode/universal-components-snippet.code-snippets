@@ -1,0 +1,21 @@
+{
+  "React Component (rc)": {
+    "prefix": "rc",
+    "body": [
+      "import cls from './${TM_FILENAME_BASE}.module.scss';",
+      "import { classNames } from 'shared';",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {",
+      "  className?: string;",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE} = ({ className }: ${TM_FILENAME_BASE}Props) => {",
+      "  return (",
+      "    <div className={classNames(cls.${TM_FILENAME_BASE}, {}, [className])}>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Шаблон функционального компонента с classNames и SCSS"
+  }
+}
