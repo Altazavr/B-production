@@ -1,3 +1,3 @@
-export { LangSwitcher } from './LangSwitcher/LangSwitcher';
+export { LangSwitcher } from "./LangSwitcher/LangSwitcher";
 
-export { ThemeSwitcher } from './ThemeSwitcher/ui/ThemeSwitcher';
+export { ThemeSwitcher } from "./ThemeSwitcher/ui/ThemeSwitcher";
