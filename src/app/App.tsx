@@ -15,9 +15,6 @@ function App() {
                 <div className="content-page">
                     <Sidebar />
                     <AppRouter />
-                    <div>
-                        <p>hello</p>
-                    </div>
                 </div>
             </Suspense>
         </div>
