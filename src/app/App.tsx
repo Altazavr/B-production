@@ -8,6 +8,7 @@ import { AppRouter } from './providers/router';
 
 function App() {
     const { theme } = UseTheme();
+
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">

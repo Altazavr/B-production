@@ -7,7 +7,7 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
         extensions: ['.tsx', '.ts', '.js'],
         preferAbsolute: true,
         modules: [options.paths.src, 'node_modules'],
-        alias: {},
+        alias: { '@translations': path.resolve(__dirname, '../../extractedTranslations') },
         mainFiles: ['index'],
     };
 }
