@@ -9,7 +9,7 @@ describe('Button', () => {
     });
     test('Test toggle', () => {
         renderWithTranslation(<Sidebar />);
-        const toggleBtn = screen.getByTestId("toggleBtn");
+        const toggleBtn = screen.getByTestId('toggleBtn');
         fireEvent.click(toggleBtn);
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
     });
