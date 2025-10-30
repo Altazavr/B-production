@@ -1,5 +1,19 @@
 {
-    "tabWidth": 4,
-    "jsx-single-quote": true,
-    "singleQuote": true
+  "tabWidth": 4,
+  "jsxSingleQuote": true,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.yml",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.yaml",
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
 }
