@@ -10,9 +10,7 @@ export function buildWebpackConfig(options: BuildOptions) {
     return {
         mode,
         entry: paths.entry,
-        module: {
-            rules: buildLoaders(options),
-        },
+        module: { rules: buildLoaders(options) },
         resolve: buildResolvers(options),
         output: {
             filename: '[name].[contenthash].js',

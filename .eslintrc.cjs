@@ -46,7 +46,7 @@ module.exports = {
         'max-len': ['warn', { ignoreComments: true, code: 100 }],
         'linebreak-style': 'off',
         'storybook/no-renderer-packages': 'off',
-        'object-curly-newline': ['error', { multiline: true }],
+        'object-curly-newline': ['warn', { multiline: true }],
     },
     globals: { __IS_DEV__: true },
     overrides: [

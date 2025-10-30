@@ -7,9 +7,7 @@ import { ErrorPage } from './ErrorPage';
 export default {
     title: 'shared/ErrorPage',
     component: ErrorPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+    argTypes: { backgroundColor: { control: 'color' } },
 } as ComponentMeta<typeof ErrorPage>;
 
 const Template: ComponentStory<typeof ErrorPage> = (args) => (
