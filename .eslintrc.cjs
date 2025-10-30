@@ -12,9 +12,7 @@ module.exports = {
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
+        ecmaFeatures: { jsx: true },
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
@@ -48,8 +46,15 @@ module.exports = {
         'max-len': ['warn', { ignoreComments: true, code: 100 }],
         'linebreak-style': 'off',
         'storybook/no-renderer-packages': 'off',
+        'object-curly-newline': ['error', { multiline: true }],
     },
-    globals: {
-        __IS_DEV__: true,
-    },
+    globals: { __IS_DEV__: true },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
