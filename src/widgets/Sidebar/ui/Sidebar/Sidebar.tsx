@@ -3,10 +3,10 @@ import { classNames, Button, ThemeButton, ButtonSize, AppLink } from 'shared';
 import { LangSwitcher, ThemeSwitcher } from 'features';
 import { useTranslation } from 'react-i18next';
 import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Sidebar.module.scss';
 import HomeIcon from '../../assets/home.svg';
 import MainIcon from '../../assets/main.svg';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface SidebarProps {
     className?: string;
