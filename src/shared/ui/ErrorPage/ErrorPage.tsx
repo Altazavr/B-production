@@ -10,7 +10,7 @@ function reloadPage() {
     location.reload();
 }
 export const ErrorPage = ({ className }: ErrorPageProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation');
     return (
         <div className={classNames(cls.ErrorPage, {}, [className])}>
             <h1>{t('Возникла непредвиденная ошибка')}</h1>
