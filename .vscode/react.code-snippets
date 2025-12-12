@@ -18,4 +18,14 @@
             "};",
         ],
     },
+    "Test Jest basic wrapper": {
+        "prefix": "ts",
+        "body": [
+            "describe('${TM_FILENAME_BASE/(.*)\\.test/$1/}', () => {",
+            "  test('', () => {",
+            "    expect().toEqual();",
+            "  });",
+            "});",
+        ],
+    },
 }
