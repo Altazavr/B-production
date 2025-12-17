@@ -1,5 +1,4 @@
 {
-  "": "",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
     " Distinctio officia eius dolore": {
       " Dolores accusamus iusto, consequatur magni fugit enim vero": {
@@ -7,6 +6,7 @@
       }
     }
   },
+  "Lorem10": "Рандомный текст лорем ипсун 10",
   "decrement": "decrement",
   "increment": "increment",
   "Возникла непредвиденная ошибка": "Возникла непредвиденная ошибка",
