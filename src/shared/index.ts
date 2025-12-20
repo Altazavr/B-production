@@ -6,3 +6,4 @@ export { ErrorPage } from './ui/ErrorPage/ErrorPage';
 export { componentRender } from './lib/tests/componentRender/componentRender';
 export { Modal } from './ui/Modal/Modal';
 export { Portal } from './ui/Portal/Portal';
+export { Input } from './ui/Input/Input';
