@@ -1,6 +1,13 @@
 import { useState } from 'react';
-import { classNames, Button, ThemeButton, ButtonSize, AppLink } from 'shared';
-import { LangSwitcher, ThemeSwitcher } from 'features';
+import {
+    classNames,
+    Button,
+    ThemeButton,
+    ButtonSize,
+    AppLink,
+    LangSwitcher,
+    ThemeSwitcher,
+} from 'shared';
 import { useTranslation } from 'react-i18next';
 import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -30,10 +37,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         >
             <div className={cls.items}>
                 <div className={cls.item}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        to={RoutePath.main}
-                    >
+                    <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>
                         <HomeIcon className={cls.icon} />
                         <span className={cls.link}>{t('Главная')}</span>
                     </AppLink>

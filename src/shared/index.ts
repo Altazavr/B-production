@@ -7,3 +7,6 @@ export { componentRender } from './lib/tests/componentRender/componentRender';
 export { Modal } from './ui/Modal/Modal';
 export { Portal } from './ui/Portal/Portal';
 export { Input } from './ui/Input/Input';
+export { Text, TextTheme } from './ui/Text/Text';
+export { LangSwitcher } from './ui/LangSwitcher/LangSwitcher';
+export { ThemeSwitcher } from './ui/ThemeSwitcher/ui/ThemeSwitcher';

@@ -1,25 +1,23 @@
 {
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
-    " Distinctio officia eius dolore": {
-      " Dolores accusamus iusto, consequatur magni fugit enim vero": {
-        "": ""
-      }
-    }
-  },
+  "": "",
   "Lorem10": "Random text Lorem Ipsum 10",
   "decrement": "",
   "increment": "",
-  "Введите username": "Введите username",
-  "Введите пароль": "Введите пароль",
+  "Введите username": "type username",
+  "Введите пароль": "type password",
   "Возникла непредвиденная ошибка": "An unexpected error occurred",
-  "Войти": "Войти",
+  "Войти": "Sign in",
+  "Вы ввели неверный логин или пароль": "",
+  "Выйти": "Выйти",
   "Главная": "Home",
-  "Короткий язык": "Короткий язык",
+  "Короткий язык": "Short language",
   "О сайте": "About",
   "Обновить страницу": "Refresh page",
   "Остранице": "About page",
   "Страница не найдена": "Page not found",
+  "Форма авторизации": "Auth Form",
   "бросить ошибку": "throw error",
   "короткий язык": "En",
+  "неверный логин или пароль": "wrong password or username",
   "язык": "English"
 }
