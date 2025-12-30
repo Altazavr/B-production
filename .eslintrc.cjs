@@ -43,7 +43,7 @@ module.exports = {
                 ignoreAttribute: ['to', 'data-testid'],
             },
         ],
-        'max-len': ['warn', { ignoreComments: true, code: 100 }],
+        'max-len': ['warn', { ignoreComments: true, code: 120 }],
         'linebreak-style': 'off',
         'storybook/no-renderer-packages': 'off',
         'object-curly-newline': ['warn', { multiline: true }],
