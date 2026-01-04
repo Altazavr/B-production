@@ -6,9 +6,11 @@ import {
     Text,
     TextTheme,
     DynamicModuleLoader,
+    useAppDispatch,
 } from 'shared';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+
 import { useCallback } from 'react';
 import { ReducersLists } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { loginByUsername } from '../../model/service/loginByUsername';
@@ -21,10 +23,11 @@ import { getLoginIsLoading } from '../../model/selectors/getLoginLoading/getLogi
 
 interface LoginFormProps {
     className?: string;
+    onSuccess: () => void;
 }
 
-const LoginForm = ({ className }: LoginFormProps) => {
-    const dispatch = useDispatch();
+const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
+    const dispatch = useAppDispatch();
 
     const { t } = useTranslation();
 
@@ -40,9 +43,12 @@ const LoginForm = ({ className }: LoginFormProps) => {
         [dispatch],
     );
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, username, password]);
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
+    }, [onSuccess, dispatch, username, password]);
 
     const onChangePassword = useCallback(
         (value: string) => {
@@ -52,9 +58,7 @@ const LoginForm = ({ className }: LoginFormProps) => {
     );
     const initialReducers: ReducersLists = { loginForm: loginReducer };
     return (
-        <DynamicModuleLoader
-            reducers={initialReducers}
-        >
+        <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
                 {error && (

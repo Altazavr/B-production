@@ -1,27 +1,22 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import {
     classNames,
     Button,
     ThemeButton,
     ButtonSize,
-    AppLink,
     LangSwitcher,
     ThemeSwitcher,
 } from 'shared';
 import { useTranslation } from 'react-i18next';
-import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { SidebarItemsLists } from '../../models/items';
 import cls from './Sidebar.module.scss';
-import HomeIcon from '../../assets/home.svg';
-import MainIcon from '../../assets/main.svg';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
-    const { t } = useTranslation();
-
+export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
@@ -36,21 +31,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
             ])}
         >
             <div className={cls.items}>
-                <div className={cls.item}>
-                    <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>
-                        <HomeIcon className={cls.icon} />
-                        <span className={cls.link}>{t('Главная')}</span>
-                    </AppLink>
-                </div>
-                <div className={cls.item}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        to={RoutePath.about}
-                    >
-                        <MainIcon className={cls.icon} />
-                        <span className={cls.link}>{t('О сайте')}</span>
-                    </AppLink>
-                </div>
+                {SidebarItemsLists.map((item) => (
+                    <SidebarItem
+                        collapsed={collapsed}
+                        item={item}
+                        key={item.path}
+                    />
+                ))}
             </div>
             <Button
                 data-testid="toggleBtn"
@@ -68,4 +55,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </div>
         </div>
     );
-};
+});
