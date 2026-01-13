@@ -10,5 +10,6 @@ export { Input } from './ui/Input/Input';
 export { Text, TextTheme } from './ui/Text/Text';
 export { LangSwitcher } from './ui/LangSwitcher/LangSwitcher';
 export { ThemeSwitcher } from './ui/ThemeSwitcher/ui/ThemeSwitcher';
-export { DynamicModuleLoader } from './lib/components/DynamicModuleLoader/DynamicModuleLoader';
+export { DynamicModuleLoader, ReducersList } from './lib/components/DynamicModuleLoader/DynamicModuleLoader';
 export { useAppDispatch } from './hooks/useAppDispatch/useAppDispatch';
+export { $api } from './api/api';

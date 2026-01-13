@@ -55,8 +55,9 @@ module.exports = {
         'eol-last': 'off',
         'react/button-has-type': 'warn',
         'no-param-reassign': 'off',
+        'no-undef': 'off',
     },
-    globals: { __IS_DEV__: true },
+    globals: { __IS_DEV__: true, __API__: true },
     overrides: [
         {
             files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

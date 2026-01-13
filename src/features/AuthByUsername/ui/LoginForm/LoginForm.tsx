@@ -12,7 +12,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 
 import { useCallback } from 'react';
-import { ReducersLists } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { loginByUsername } from '../../model/service/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slices/loginSlice';
 import cls from './LoginForm.module.scss';
@@ -56,7 +56,7 @@ const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
         },
         [dispatch],
     );
-    const initialReducers: ReducersLists = { loginForm: loginReducer };
+    const initialReducers: ReducersList = { loginForm: loginReducer };
     return (
         <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
