@@ -1,6 +1,14 @@
 {
     "Профиль": "Profile",
+    "Отменить": "Cancel",
     "Редактировать": "Fix",
+    "Сохранить": "Save",
+    "Произошла ошибка при загрузке профиля": "an error occured while loading profile data",
+    "Попробуйте перезагрузить страницу профиля": "Try to reload profile page",
     "Ваша фамилия": "Your surname",
-    "Ваше имя": "Your name"
+    "Ваше имя": "Your name",
+    "Ваш возраст": "Your age",
+    "Ваш город": "Your city",
+    "Введите ваше отображаемое имя": "Type your username",
+    "Введите ссылку на ваш аватар": "Type link to your avatar"
 }

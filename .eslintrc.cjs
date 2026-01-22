@@ -41,7 +41,7 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['to', 'data-testid'],
+                ignoreAttribute: ['to', 'data-testid', 'alt'],
             },
         ],
         'max-len': ['warn', { ignoreComments: true, code: 120 }],
@@ -56,6 +56,7 @@ module.exports = {
         'react/button-has-type': 'warn',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'implicit-arrow-linebreak': 'off'
     },
     globals: { __IS_DEV__: true, __API__: true },
     overrides: [

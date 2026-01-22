@@ -88,7 +88,7 @@ const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
                     onClick={onLoginClick}
                     disabled={isLoading}
                 >
-                    {t('Войти')}
+                    {t('Login')}
                 </Button>
             </div>
         </DynamicModuleLoader>

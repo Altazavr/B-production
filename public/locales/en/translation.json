@@ -1,3 +1,12 @@
 {
-    "перевод": "translation"
+    "короткий язык": "Short Lang",
+    "язык": "Language",
+    "Login": "Login",
+    "Войти": "Sign in",
+    "Выйти": "Sign out",
+    "Главная страница Sidebar": "Main page",
+    "Страница о Sidebar": "About us",
+    "Страница профила Sidebar": "Profile page",
+    "бросить ошибку": "throw an error",
+    "Укажите вашу валюту": "Please indicate your currency"
 }

@@ -10,14 +10,15 @@ import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    'value' | 'onChange'
+    'value' | 'onChange' | 'readOnly'
 >;
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     autofocus?: boolean;
+    readOnly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -28,6 +29,7 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         placeholder,
         autofocus,
+        readOnly,
         ...otherProps
     } = props;
     const ref = useRef<HTMLInputElement>(null);
@@ -59,7 +61,13 @@ export const Input = memo((props: InputProps) => {
     };
 
     return (
-        <div className={classNames(cls.InputWrapper, {}, [className])}>
+        <div
+            className={classNames(
+                cls.InputWrapper,
+                { [cls.readOnly]: readOnly },
+                [className],
+            )}
+        >
             {placeholder && (
                 <div className={cls.placeholder}>{`${placeholder}>`}</div>
             )}
@@ -73,9 +81,10 @@ export const Input = memo((props: InputProps) => {
                     onFocus={onFocus}
                     onBlur={onBlur}
                     onSelect={onSelect}
+                    readOnly={readOnly}
                     {...otherProps}
                 />
-                {isFocused && (
+                {(isFocused && !readOnly) && (
                     <span
                         className={cls.caret}
                         style={{ left: `${caretPosition * 9}px` }}

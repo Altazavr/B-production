@@ -7,7 +7,6 @@ import {
     LangSwitcher,
     ThemeSwitcher,
 } from 'shared';
-import { useTranslation } from 'react-i18next';
 import { SidebarItemsLists } from '../../models/items';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
