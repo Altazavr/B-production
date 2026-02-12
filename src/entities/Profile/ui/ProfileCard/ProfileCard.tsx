@@ -41,7 +41,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCurrency,
         onChangeCountry,
     } = props;
-    const { t, i18n } = useTranslation('profile');
+    const { t } = useTranslation('profile');
 
     const mods: Mods = { [cls.editing]: !readOnly };
 

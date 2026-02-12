@@ -56,9 +56,9 @@ module.exports = {
         'react/button-has-type': 'warn',
         'no-param-reassign': 'off',
         'no-undef': 'off',
-        'implicit-arrow-linebreak': 'off'
+        'implicit-arrow-linebreak': 'off',
     },
-    globals: { __IS_DEV__: true, __API__: true },
+    globals: { __IS_DEV__: true, __API__: true, __PROJECT__: true },
     overrides: [
         {
             files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

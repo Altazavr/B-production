@@ -2,7 +2,7 @@ export { Profile, ProfileSchema } from './models/types/ProfileSchema';
 export {
     profileActions,
     profileReducer,
-} from '../Profile/models/slices/ProfileSlice';
+} from './models/slices/profileSlice';
 export { updateProfileData } from './models/service/updateProfileData/updateProfileData';
 export { fetchProfileData } from './models/service/fetchProfileData/fetchProfileData';
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
@@ -11,3 +11,5 @@ export { getProfileIsLoading } from './models/selectors/getProfileIsLoading/getP
 export { getProfileError } from './models/selectors/getProfileError/getProfileError';
 export { getProfileReadonly } from './models/selectors/getProfileReadonly/getProfileReadonly';
 export { getProfileForm } from './models/selectors/getProfileForm/getProfileForm';
+export { getProfileValidateErrors } from './models/selectors/getProfileValidateErrors/getProfileValidateErrors';
+export { ValidateProfileError } from './models/types/ProfileSchema';
