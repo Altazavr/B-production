@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { UseTheme } from 'app/providers/ThemeProvider/index';
+import { useTheme } from 'app/providers/ThemeProvider/index';
 import { classNames } from 'shared/index';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
@@ -9,7 +9,7 @@ import { userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
 
 function App() {
-    const { theme } = UseTheme();
+    const { theme } = useTheme();
 
     const dispatch = useDispatch();
 
