@@ -3,9 +3,9 @@ import { useTheme } from 'app/providers/ThemeProvider/index';
 import { classNames } from 'shared/index';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { Suspense, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { Suspense, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, userActions } from 'entities/User';
 import { AppRouter } from './providers/router';
 
 function App() {
@@ -17,13 +17,15 @@ function App() {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
 
+    const inited = useSelector(getUserInited);
+
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
-                    <AppRouter />
+                    {inited && <AppRouter />}
                 </div>
             </Suspense>
         </div>
