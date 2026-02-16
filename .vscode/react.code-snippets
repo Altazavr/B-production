@@ -14,7 +14,7 @@
             "    const { className } = props;",
             "    const { t } = useTranslation();",
             "    return (",
-            "        <div className={classNames(cls.${TM_FILENAME_BASE}, {}, [className])} />",
+            "        <div className={classNames(cls.${TM_FILENAME_BASE}, {}, [className])}> </div>",
             "    );",
             "};",
         ],
@@ -29,4 +29,38 @@
             "});",
         ],
     },
+    "Storybook page": {
+        "prefix": "sbp",
+        "body": [
+            "import { ComponentStory, ComponentMeta } from '@storybook/react';",
+            "import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';",
+            "import { Theme } from 'app/providers/ThemeProvider';",
+            "import { ${TM_FILENAME_BASE/(.*)\\.stories/$1/} } from './${TM_FILENAME_BASE/(.*)\\.stories/$1/}';",
+            "",
+            "export default {",
+            "    title: 'pages/${TM_FILENAME_BASE/(.*)\\.stories/$1/}',",
+            "    component: ${TM_FILENAME_BASE/(.*)\\.stories/$1/},",
+            "    argTypes: { backgroundColor: { control: 'color' } },",
+            "} as ComponentMeta<typeof ${TM_FILENAME_BASE/(.*)\\.stories/$1/}>;",
+            "",
+            "const Template: ComponentStory<typeof ${TM_FILENAME_BASE/(.*)\\.stories/$1/}> = () => (",
+            "    <${TM_FILENAME_BASE/(.*)\\.stories/$1/} />",
+            ");",
+            "",
+            "export const Normal = Template.bind({});",
+            "Normal.args = {};",
+            "",
+            "export const Dark = Template.bind({});",
+            "Dark.args = {};",
+            "Dark.decorators = [ThemeDecorator(Theme.DARK)];"
+        ]
+    },
+    "React lazy page": {
+        "prefix": "lz",
+        "body": [
+            "import { lazy } from 'react';",
+            "",
+            "export const ${TM_FILENAME_BASE/(.*)\\.async/$1/}Async = lazy(() => import('./${TM_FILENAME_BASE/(.*)\\.async/$1/}'));"
+        ]
+    }
 }
