@@ -1,4 +1,4 @@
-export { userActions, userReducer } from './models/slice/UserSlice';
-export { User, UserSchema } from './models/types/UserSchema';
-export { getUserAuthData } from './models/selectors/getUserLoginData/getUserAuthData';
-export { getUserInited } from './models/selectors/getUserLoginData/getUserInited';
+export { userActions, userReducer } from 'entities/User/model/slice/UserSlice';
+export { User, UserSchema } from 'entities/User/model/types/UserSchema';
+export { getUserAuthData } from 'entities/User/model/selectors/getUserLoginData/getUserAuthData';
+export { getUserInited } from 'entities/User/model/selectors/getUserLoginData/getUserInited';

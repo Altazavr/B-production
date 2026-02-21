@@ -1,4 +1,4 @@
-import { classNames, Mods } from 'shared/lib/className';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, {
     MutableRefObject,
     ReactNode,

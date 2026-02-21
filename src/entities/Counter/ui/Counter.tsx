@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { counterActions } from '../models/slice/CounterSlice';
-import { getCounterValue } from '../models/selectors/getCounterValue/getCounterValue';
+import { counterActions } from 'entities/Counter/model/slice/CounterSlice';
+import { getCounterValue } from 'entities/Counter/model/selectors/getCounterValue/getCounterValue';
 
 export const Counter = () => {
     const { t } = useTranslation();

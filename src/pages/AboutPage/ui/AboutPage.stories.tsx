@@ -12,7 +12,6 @@ export default {
 const Template: ComponentStory<typeof AboutPage> = () => (
     <AboutPage />
 );
-
 export const Normal = Template.bind({});
 Normal.args = {};
 

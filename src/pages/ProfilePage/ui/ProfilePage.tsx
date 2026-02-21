@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/className';
+import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -15,12 +15,12 @@ import {
     getProfileForm,
 } from 'entities/Profile';
 import { useCallback, useEffect } from 'react';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared';
-import { ValidateProfileError } from 'entities/Profile/models/types/ProfileSchema';
+import { ValidateProfileError } from 'entities/Profile/model/types/ProfileSchema';
 import { useTranslation } from 'react-i18next';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 

@@ -1,15 +1,15 @@
-export { Profile, ProfileSchema } from './models/types/ProfileSchema';
+export { Profile, ProfileSchema } from 'entities/Profile/model/types/ProfileSchema';
 export {
     profileActions,
     profileReducer,
-} from './models/slices/profileSlice';
-export { updateProfileData } from './models/service/updateProfileData/updateProfileData';
-export { fetchProfileData } from './models/service/fetchProfileData/fetchProfileData';
+} from 'entities/Profile/model/slice/profileSlice';
+export { updateProfileData } from 'entities/Profile/model/services/updateProfileData/updateProfileData';
+export { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData';
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
-export { getProfileData } from './models/selectors/getProfileData/getProfileData';
-export { getProfileIsLoading } from './models/selectors/getProfileIsLoading/getProfileIsLoading';
-export { getProfileError } from './models/selectors/getProfileError/getProfileError';
-export { getProfileReadonly } from './models/selectors/getProfileReadonly/getProfileReadonly';
-export { getProfileForm } from './models/selectors/getProfileForm/getProfileForm';
-export { getProfileValidateErrors } from './models/selectors/getProfileValidateErrors/getProfileValidateErrors';
-export { ValidateProfileError } from './models/types/ProfileSchema';
+export { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
+export { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
+export { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
+export { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly';
+export { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
+export { getProfileValidateErrors } from 'entities/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+export { ValidateProfileError } from 'entities/Profile/model/types/ProfileSchema';

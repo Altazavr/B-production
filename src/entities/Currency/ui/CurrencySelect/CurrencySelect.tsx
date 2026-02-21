@@ -2,7 +2,7 @@ import { classNames } from 'shared';
 import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select/Select';
 import { useCallback } from 'react';
-import { Currency } from '../../models/types/currency';
+import { Currency } from 'entities/Currency/model/types/currency';
 
 interface CurrencySelectProps {
     className?: string;

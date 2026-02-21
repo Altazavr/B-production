@@ -1,4 +1,4 @@
-export { classNames } from './lib/className';
+export { classNames } from './lib/classNames/classNames';
 export { AppLink } from './ui/AppLink/AppLink';
 export { PageLoader } from './ui/PageLoader/PageLoader';
 export { Button, ThemeButton, ButtonSize } from './ui/Button/Button';
@@ -10,5 +10,5 @@ export { Text, TextTheme } from './ui/Text/Text';
 export { LangSwitcher } from './ui/LangSwitcher/LangSwitcher';
 export { ThemeSwitcher } from './ui/ThemeSwitcher/ui/ThemeSwitcher';
 export { DynamicModuleLoader, ReducersList } from './lib/components/DynamicModuleLoader/DynamicModuleLoader';
-export { useAppDispatch } from './hooks/useAppDispatch/useAppDispatch';
+export { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 export { $api } from './api/api';
