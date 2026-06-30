@@ -13,15 +13,17 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailsPage/model/types/ArticleDetailsCommentSchema';
+import { addCommentFormSchema } from 'features/addCommentForm';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     // managable reducers
     articleDetails?: ArticleDetailsSchema;
+    addCommentForm?: addCommentFormSchema;
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
-    ArticleDetailsComments?: ArticleDetailsCommentsSchema;
+    articleDetailsComments?: ArticleDetailsCommentsSchema;
 }
 
 export type StateSchemakey = keyof StateSchema;

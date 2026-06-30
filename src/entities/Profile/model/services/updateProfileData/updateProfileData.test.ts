@@ -13,6 +13,7 @@ const data = {
     city: 'Astana',
     country: Country.Kazakhstan,
     currency: Currency.USD,
+    id: '1',
 };
 
 describe('updateProfileData.test', () => {

@@ -1,16 +1,18 @@
 import { classNames, DynamicModuleLoader, Text, useAppDispatch } from 'shared';
 import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
 import { CommentList } from 'entities/Comment';
-import { fetchCommentsByArticleId } from 'pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId';
+import { AddCommentForm } from 'features/addCommentForm';
+import { addCommentFormSlice } from 'features/addCommentForm/model/slices/addCommentFormSlice';
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsCommentReducer, getArticlesDetailsComments } from '../model/slices/ArticleDeatilsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
-import { getCommentError, getCommentIsLoading } from '../model/selectors/comments';
+import { getCommentIsLoading } from '../model/selectors/comments';
+import { AddCommentsForArticle } from '../model/services/addCommentForArticle/addCommentsForArticle';
 
 interface ArticlesDetailsPageProps {
     className?: string;
@@ -28,6 +30,10 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(AddCommentsForArticle(text));
+    }, [dispatch]);
+
     if (!id) {
         return (
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -35,15 +41,20 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
             </div>
         );
     }
+
     return (
         <DynamicModuleLoader
             removeAfterUnmount
-            reducers={{ ArticleDetailsComments: articleDetailsCommentReducer }}
+            reducers={{ articleDetailsComments: articleDetailsCommentReducer }}
         >
             <div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('Комментарии')} />
-                <CommentList comments={comments} isLoading={commentsIsLoading} />
+                <AddCommentForm onSendComment={onSendComment} />
+                <CommentList
+                    comments={comments}
+                    isLoading={commentsIsLoading}
+                />
             </div>
         </DynamicModuleLoader>
     );

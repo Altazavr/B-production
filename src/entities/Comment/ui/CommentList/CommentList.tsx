@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Comment } from 'entities/Comment';
 import { CommentCardIsLoading } from 'entities/Comment/ui/CommentCardIsLoading/CommentCardIsLoading';
 import { Text } from 'shared';
+import { fetchCommentsByArticleId } from 'pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { CommentCard } from '../CommentCard/CommentCard';
 import cls from './CommentList.module.scss';
 
