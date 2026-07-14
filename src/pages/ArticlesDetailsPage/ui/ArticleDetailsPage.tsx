@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/addCommentForm';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsCommentReducer, getArticlesDetailsComments } from '../model/slices/ArticleDeatilsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
@@ -41,9 +42,9 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
     }
 
@@ -52,7 +53,7 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
             removeAfterUnmount
             reducers={{ articleDetailsComments: articleDetailsCommentReducer }}
         >
-            <div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
                 <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>{t('Назад к списку')}</Button>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('Комментарии')} />
@@ -61,7 +62,7 @@ const ArticleDetailsPage = (props: ArticlesDetailsPageProps) => {
                     comments={comments}
                     isLoading={commentsIsLoading}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
